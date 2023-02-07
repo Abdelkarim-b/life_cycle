@@ -1,9 +1,17 @@
+import { useState } from 'react';
 import './App.css';
+import { Text } from './Text';
 
 function App() {
+  const [showText, setShowText] = useState(false)
+  
+  const handleShow = () =>{
+    setShowText(!showText)
+  }
   return (
     <div className="App">
-       <h2>Hello world !</h2>
+       <button onClick={handleShow}>Show/Hide</button> 
+       {showText && <Text />}
     </div>
   );
 }
